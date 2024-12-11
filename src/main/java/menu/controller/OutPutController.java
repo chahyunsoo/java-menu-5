@@ -10,5 +10,9 @@ public class OutPutController {
         this.outPutView = outPutView;
     }
 
+    public void run() {
+
+    }
+
 
 }
