@@ -1,5 +1,7 @@
 package menu.controller;
 
+import java.util.List;
+import menu.model.Coach;
 import menu.view.OutPutView;
 
 public class OutPutController {
@@ -10,8 +12,8 @@ public class OutPutController {
         this.outPutView = outPutView;
     }
 
-    public void run() {
-
+    public void run(List<Coach> coaches) {
+        
     }
 
 

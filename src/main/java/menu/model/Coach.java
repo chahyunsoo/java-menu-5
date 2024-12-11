@@ -6,12 +6,12 @@ import menu.constant.BoundValue;
 
 public class Coach {
     private final String coachName;
-    private final CannotEatMenu cannotEatMenu;
+    private final HateMenu hateMenu;
 
-    public Coach(String coachName, CannotEatMenu cannotEatMenu) {
+    public Coach(String coachName, HateMenu hateMenu) {
         validate(coachName);
         this.coachName = coachName;
-        this.cannotEatMenu = cannotEatMenu;
+        this.hateMenu = hateMenu;
 
     }
 
@@ -30,7 +30,7 @@ public class Coach {
         return this.coachName;
     }
 
-    public CannotEatMenu getCannotEatMenu() {
-        return cannotEatMenu;
+    public HateMenu getCannotEatMenu() {
+        return hateMenu;
     }
 }

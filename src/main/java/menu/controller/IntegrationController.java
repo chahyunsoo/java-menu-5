@@ -5,6 +5,9 @@ import static menu.constant.Message.END_MESSAGE;
 import static menu.constant.Message.MENU_RECOMMEND_RESULT;
 import static menu.constant.Message.START_MESSAGE;
 
+import java.util.List;
+import menu.model.Coach;
+
 public class IntegrationController {
     public final InputController inputController;
     public final OutPutController outPutController;
@@ -17,9 +20,9 @@ public class IntegrationController {
     public void run() {
         try {
             START_MESSAGE.printMessage();
-            inputController.run();
+            List<Coach> coaches = inputController.run();
             MENU_RECOMMEND_RESULT.printMessage();
-            outPutController.run();
+            outPutController.run(coaches);
             END_MESSAGE.printMessage();
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException(INVALID_INPUT.getMessage());
