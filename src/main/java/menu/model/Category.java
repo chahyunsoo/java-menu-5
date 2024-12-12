@@ -3,11 +3,11 @@ package menu.model;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public enum Category {
-    JAPAN("일식", 1),
     KOREAN("한식", 2),
+    WEST("양식", 5),
+    JAPAN("일식", 1),
     CHINA("중식", 3),
-    ASIA("아시안", 4),
-    WEST("양식", 5);
+    ASIA("아시안", 4);
 
     private final String categoryName;
     private final int categoryNumber;
@@ -25,8 +25,19 @@ public enum Category {
         return categoryNumber;
     }
 
-    public static Category pickCategoryByShuffle() {
+
+    public static String pickCategoryByShuffle() {
         int pickNumberInRange = Randoms.pickNumberInRange(1, 5);
-        return Category.values()[pickNumberInRange];
+        return getCategoryNameByCategoryNumber(pickNumberInRange);
+    }
+
+    public static String getCategoryNameByCategoryNumber(int pickNumberInRange) {
+        String categoryName = null;
+        for (Category category : Category.values()) {
+            if (category.getCategoryNumber() == pickNumberInRange) {
+                categoryName = category.getCategoryName();
+            }
+        }
+        return categoryName;
     }
 }

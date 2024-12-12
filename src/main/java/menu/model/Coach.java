@@ -30,7 +30,7 @@ public class Coach {
         return this.coachName;
     }
 
-    public HateMenu getCannotEatMenu() {
-        return hateMenu;
+    public String[] getHateMenu() {
+        return hateMenu.getHateMenu();
     }
 }

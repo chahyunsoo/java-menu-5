@@ -7,8 +7,10 @@ public enum Message {
     MENU_RECOMMEND_RESULT("메뉴 추천 결과입니다."
                                   + System.lineSeparator()
                                   + "[ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]"
-                                  + System.lineSeparator()
-                                  + "[ 카테고리 | 한식 | 한식 | 일식 | 중식 | 아시안 ]"),
+                                  + System.lineSeparator()),
+    PRINT_CATEGORY("[ 카테고리 | " + "%s" + " | " + "%s"
+                           + " | " + "%s" + " | " + "%s" + " | " + "%s" + " ]"),
+
     END_MESSAGE("추천을 완료했습니다."),
     PRINT_MENU_RECOMMEND_RESULT("[ "
                                         + "%s"
@@ -22,7 +24,8 @@ public enum Message {
                                         + "%s"
                                         + " | "
                                         + "%s"
-                                        + " ]");
+                                        + " ]"),
+    HAS_HATE_MENU("못 먹는 음식이 메뉴에 포함되어 있습니다.");
 
     private final String message;
 
@@ -36,5 +39,9 @@ public enum Message {
 
     public void printMessage(Object... args) {
         System.out.printf(this.message, args);
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
